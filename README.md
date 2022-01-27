@@ -1,6 +1,6 @@
 # Unity Style Guide
 
-Bu makale, Unity'de bir proje yapısı ve komut dosyaları ve varlıklar için bir adlandırma kuralı kurmaya yönelik fikirler içerir. 
+Bu makale, Unity'de bir proje yapısı ve komut dosyaları ve assetler için bir adlandırma kuralı kurmaya yönelik fikirler içerir. 
 
 <a name="toc"></a>
 ## Table of Contents
@@ -31,7 +31,7 @@ Bununla birlikte, stil kılavuzları yaşayan belgeler olmalıdır ve değişikl
 > ##### *Stil üzerine tartışmalar anlamsızdır. Bir stil rehberi olmalı ve onu takip etmelisiniz.* 
 > [_Rebecca Murphey_](https://rmurphey.com)
 
-#### Herhangi bir projedeki tüm yapı, varlıklar ve kod, kaç kişi katkıda bulunursa bulunsun, tek bir kişinin oluşturduğu gibi görünmelidir.
+#### Herhangi bir projedeki tüm yapı, assetler ve kod, kaç kişi katkıda bulunursa bulunsun, tek bir kişinin oluşturduğu gibi görünmelidir.
 Bir projeden diğerine geçmek, stil ve yapının yeniden öğrenilmesine neden olmamalıdır. Bir stil kılavuzuna uymak, gereksiz varsayımları ve belirsizlikleri ortadan kaldırır.
 
 Ayrıca, stil hakkında düşünmeniz gerekmediğinden, talimatları takip etmeniz yeterli olduğundan, daha verimli oluşturma ve bakıma olanak tanır. Bu stil kılavuzu, en iyi uygulamalar göz önünde bulundurularak yazılmıştır; bu, bu stil kılavuzunu izleyerek, izlenmesi zor sorunları da en aza indireceğiniz anlamına gelir.
@@ -39,12 +39,12 @@ Ayrıca, stil hakkında düşünmeniz gerekmediğinden, talimatları takip etmen
 #### Arkadaşlar, arkadaşlarının kötü bir tarza sahip olmasına izin vermez.
 Bir stil rehberine karşı çalışan veya stil rehberi olmayan birini görürseniz, onları düzeltmeye çalışın.
 
-Bir ekip içinde çalışırken veya bir topluluk içinde tartışırken, insanlar tutarlı olduğunda yardım etmek ve yardım istemek çok daha kolaydır. Kimse birinin spagetti kodunu çözmeye yardım etmekten veya anlayamadığı adlara sahip varlıklarla uğraşmaktan hoşlanmaz.
+Bir ekip içinde çalışırken veya bir topluluk içinde tartışırken, insanlar tutarlı olduğunda yardım etmek ve yardım istemek çok daha kolaydır. Kimse birinin spagetti kodunu çözmeye yardım etmekten veya anlayamadığı adlara sahip assetlerle uğraşmaktan hoşlanmaz.
 
 İşi farklı ama tutarlı ve aklı başında bir stil kılavuzuna uygun olan birine yardım ediyorsanız, ona uyum sağlamanız gerekir. Herhangi bir stil kılavuzuna uymuyorsa lütfen buraya yönlendirin. 
 
 <a name="importantterminology"></a>
-### 1.2 Important Terminology
+### 1.2 Önemli Terminoloji
 
 <a name="terms-prefab"></a>
 #### Prefabs
@@ -76,17 +76,17 @@ Bir şeyleri adlandırmanın birkaç farklı yolu vardır. İşte bazı yaygın 
 **[⬆ Back to Top](#table-of-contents)**
 
 <a name="structure"></a>
-## 2. Project Structure
+## 2. Proje Dizin Yapısı
 Bir projenin dizin yapısı stili yasa olarak kabul edilmelidir. Asset adlandırma kuralları ve içerik dizini yapısı el ele gider ve herhangi birinin ihlali gereksiz kaosa neden olur.
 
-Bu tarzda, asset türlerini klasörlerle gruplayan başka bir ortak yapı yerine, assetlerle çalışanlar için belirli bir türdeki varlıkları bulmak için Proje Penceresinin filtreleme ve arama yeteneklerine daha fazla dayanan bir yapı kullanacağız.
+Bu tarzda, asset türlerini klasörlerle gruplayan başka bir ortak yapı yerine, assetlerle çalışanlar için belirli bir türdeki assetlerı bulmak için Proje Penceresinin filtreleme ve arama yeteneklerine daha fazla dayanan bir yapı kullanacağız.
 
-> Bir prefix [adlandırma kuralı](#asset-name-modifiers) kullanmak, klasörleri `Meshes`, `Textures`, ve `Materials` gibi benzer türdeki varlıkları içerecek şekilde kullanmak, varlık türlerinin her ikisi de zaten sıralanmış olduğundan gereksiz bir uygulamadır ve prefix kullanarak içerik tarayıcısında filtrelenebilir. 
+> Bir prefix [adlandırma kuralı](#asset-name-modifiers) kullanmak, klasörleri `Meshes`, `Textures`, ve `Materials` gibi benzer türdeki assetlerı içerecek şekilde kullanmak, varlık türlerinin her ikisi de zaten sıralanmış olduğundan gereksiz bir uygulamadır ve prefix kullanarak içerik tarayıcısında filtrelenebilir. 
 <pre>
 Assets
     <a name="#structure-developers">_Developers</a>(Use a `_`to keep this folder at the top)
         DeveloperName
-            (Work in progress assets)
+            (Üzerinde çalışılan assetler)
     <a name="structure-top-level">ProjectName</a>
             Characters
             	Anakin
@@ -152,145 +152,144 @@ Bu yapılandırmayı kullanmamızın sebepleri aşağıdakilerdir.
 
 ### Sections
 
-> 2.1 [Folder Names](#structure-folder-names)
+> 2.1 [Dosya İsimleri](#structure-folder-names)
 
-> 2.2 [Top-Level Folders](#structure-top-level)
+> 2.2 [Üst Düzey Dosyalar](#structure-top-level)
 
-> 2.3 [Developer Folders](#structure-developers)
+> 2.3 [Developer Dosyaları](#structure-developers)
 
-> 2.4 [Levels](#levels)
+> 2.4 [Levellar](#levels)
 
 > 2.5 [Define Ownership](#structure-ownership)
 
-> 2.6 [`Assets` and `AssetTypes`](#structure-assettypes)
+> 2.6 [`Assets` ve `AssetTypes`](#structure-assettypes)
 
-> 2.7 [Large Sets](#structure-large-sets)
+> 2.7 [Büyük Setler](#structure-large-sets)
 
-> 2.8 [Material Library](#structure-material-library)
+> 2.8 [Materyal Kütüphanesi](#structure-material-library)
 
 > 2.9 [Scene Structure](#scene-structure)
 
 
 <a name="2.1"></a>
 <a name="structure-folder-names"><a>
-### 2.1 Folder Names
-These are common rules for naming any folder in the content structure.
+### 2.1 Dosya İsimleri
+Bunlar, içerik yapısındaki(content structure) herhangi bir klasörü adlandırmak için ortak kurallardır. 
 
 <a name="2.1.1"></a>
-#### Always Use [PascalCase](#terms-cases)
-PascalCase refers to starting a name with a capital letter and then instead of using spaces, every following word also starts with a capital letter. For example, `DesertEagle`, `RocketPistol`, and `ASeriesOfWords`.
+#### AHerzaman [PascalCase](#terms-cases) kullanın
+PascalCase, bir isme büyük harfle başlamayı ifade eder ve ardından boşluk kullanmak yerine, takip eden her kelime büyük harfle başlar. Örneğin, "DesertEagle", "RocketPistol" ve "ASeriesOfWords". 
 
 <a name="2.1.2"></a>
-#### Never Use Spaces
-Re-enforcing [2.1.1](#2.1.1), never use spaces. Spaces can cause various engineering tools and batch processes to fail. Ideally your project's root also contains no spaces and is located somewhere such as `D:\Project` instead of `C:\Users\My Name\My Documents\Unity Projects`.
+#### Asla boşluk kullanmayın
+Bir önceki kuralın tekrarı olarak [2.1.1](#2.1.1), asla boşluk kullanmayın. Boşluklar, çeşitli mühendislik araçlarının ve toplu işlemlerin başarısız olmasına neden olabilir. İdeal olarak projenizin kökü de boşluk içermez ve 'C:\Kullanıcılar\Adım\Belgelerim\Unity Projeleri' yerine 'D:\Proje' gibi bir yerde bulunur. 
 
 <a name="2.1.3"></a>
-#### Never Use Unicode Characters And Other Symbols
-If one of your game characters is named 'Zoë', its folder name should be `Zoe`. Unicode characters can be worse than [Spaces](#2.1.2) for engineering tools and some parts applications don't support Unicode characters in paths either.
+#### Unicode Karakter ve benzeri semboller kullanmayın
+Oyun karakterlerinizden birinin adı 'Öykü' ise, klasör adı 'Oyku' olmalıdır. Unicode karakterler mühendislik araçları için [Boşluklar](#2.1.2)'dan daha kötü olabilir ve bazı parça uygulamaları da yollarda Unicode karakterleri desteklemez. 
 
-Related to this, if your project has and your computer's user name has a Unicode character (i.e. your name is `Zoë`), any project located in your `My Documents` folder will suffer from this issue. Often simply moving your project to something like `D:\Project` will fix these mysterious issues.
+Bununla ilgili olarak, projeniz ve bilgisayarınızın kullanıcı adı bir Unicode karaktere sahipse (yani adınız 'Öykü' ise), 'Belgelerim' klasörünüzde bulunan herhangi bir proje bu sorundan muzdarip olacaktır. Genellikle projenizi "D:\Project" gibi bir şeye taşımak bu gizemli sorunları çözecektir. 
 
-Using other characters outside `a-z`, `A-Z`, and `0-9` such as `@`, `-`, `_`, `,`, `*`, and `#` can also lead to unexpected and hard to track issues on other platforms, source control, and weaker engineering tools. 
-
+"az", "AZ" ve "0-9" dışında "@", "-", "_", ",", "*" ve "#" gibi diğer karakterlerin kullanılması da beklenmeyen hatalara ve kaynak kontrolü programlarının kafasının karışmasına sebep olabilir ve bu yüzden önerilmez.
 <a name="structure-no-empty-folders"></a>
-#### No Empty Folders
-There simply shouldn't be any empty folders. They clutter the content browser.
+#### Boş Dosya Bulunmaz
+Kısacası, boş klasör bulunmamalıdır. İçerik tarayıcısının kullanımını zorlaştırırlar
 
-If you find that the content browser has an empty folder you can't delete, you should perform the following:
-1. Be sure you're using source control.
-1. Navigate to the folder on-disk and delete the assets inside.
-1. Close the editor.
-1. Make sure your source control state is in sync (i.e. if using Perforce, run a Reconcile Offline Work on your content directory)
-1. Open the editor. Confirm everything still works as expected. If it doesn't, revert, figure out what went wrong, and try again.
-1. Ensure the folder is now gone.
-1. Submit changes to source control.
+İçerik tarayıcısında silemeyeceğiniz boş bir klasör olduğunu fark ederseniz, aşağıdakileri gerçekleştirmelisiniz:
+1. Kaynak kontrolünü kullandığınızdan emin olun.
+1. Diskteki klasöre gidin ve içindeki assetlerı silin.
+1. Düzenleyiciyi kapatın.
+1. Kaynak kontrol durumunuzun senkronize olduğundan emin olun (yani, Perforce kullanıyorsanız, içerik dizininizde bir Çevrimdışı Çalışmayı Uzlaştırın)
+1. Düzenleyiciyi açın. Her şeyin hala beklendiği gibi çalıştığını onaylayın. Olmazsa, geri dönün, neyin yanlış gittiğini bulun ve tekrar deneyin.
+1. Klasörün şimdi gitmiş olduğundan emin olun.
+1. Değişiklikleri kaynak kontrolüne gönderin. 
 
 <a name="2.2"></a>
 <a name="structure-top-level"><a>
-### 2.2 Use A Top Level Folder For Project Specific Assets
-All of a project's assets should exist in a folder named after the project. For example, if your project is named 'Generic Shooter', _all_ of it's content should exist in `Assets/GenericShooter`.
+### 2.2 Projeye özel Assetler için Üst Düzey Klasör kullanın
+Bir projenin tüm assetleri, projenin adını taşıyan bir klasörde bulunmalıdır. Örneğin, projenizin adı 'Generic Shooter' ise, içeriğinin _tümü_ 'Assets/GenericShooter'da bulunmalıdır. 
 
-> The `Developers` folder is not for assets that your project relies on and therefore is not project specific. See [Developer Folders](#2.3) for details about this.
+> `Developer` klasörü, projenizin dayandığı assetler için değildir ve bu nedenle projeye özel değildir. Bununla ilgili ayrıntılar için [Developer Klasörleri](#2.3) bölümüne bakın. 
 
-There are multiple reasons for this approach.
+Bu yaklaşımın birden çok nedeni vardır. 
 
 <a name="2.2.1"></a>
-#### No Global Assets
-Often in code style guides it is written that you should not pollute the global namespace and this follows the same principle. When assets are allowed to exist outside of a project folder it often becomes much harder to enforce a strict structure layout as assets not in a folder encourages the bad behavior of not having to organize assets.
+#### Global Assetlere Hayır
+Genellikle kod stili kılavuzlarında, global ad alanını kirletmemeniz gerektiği yazılır ve bu da aynı prensibi izler. Assetlerin bir proje klasörünün dışında var olmasına izin verildiğinde, bir klasörde olmayan assetler, assetleri organize etmeme gibi kötü davranışı teşvik ettiği için katı bir yapı düzenini uygulamak genellikle çok daha zor hale gelir.
 
-Every asset should have a purpose, otherwise it does not belong in a project. If an asset is an experimental test and shouldn't be used by the project it should be put in a [`Developer`](#2.3) folder.
+Her varlığın bir amacı olmalıdır, aksi takdirde bir projeye ait değildir. Bir varlık deneysel bir testse ve proje tarafından kullanılmayacaksa, bir [`Developer`](#2.3) klasörüne konmalıdır. 
 
 <a name="2.2.2"></a>
-#### Reduce Migration Conflicts
-When working on multiple projects it is common for a team to copy assets from one project to another if they have made something useful for both. 
+#### Migration Çakışmalarını Azaltın
+Birden fazla proje üzerinde çalışırken, her ikisi için de faydalı bir şey yapılmışsa, bir ekibin assetleri bir projeden diğerine kopyalaması yaygındır.
 
-By placing all project specific assets in a top level folder you reduce the chance of migration conflict when importing those assets into a new project.
+Projeye özel tüm assetlerı üst düzey bir klasöre yerleştirerek, bu assetlerı yeni bir projeye aktarırken geçiş çakışması olasılığını azaltırsınız.
 
 <a name="2.2.2e1"></a>
-##### Master Material Example
-For example, say you created a master material in one project that you would like to use in another project so you migrated that asset over. If this asset is not in a top level folder, it may have a name like `Assets/MaterialLibrary/M_Master`. If the target project doesn't have a master material already, this should work without issue.
+##### Master Material Örneği
+Örneğin, bir projede başka bir projede kullanmak istediğiniz bir ana malzeme oluşturduğunuzu ve bu varlığı başka bir projeye taşıdığınızı varsayalım. Bu varlık bir üst düzey klasörde değilse, 'Assets/MaterialLibrary/M_Master' gibi bir ada sahip olabilir. Hedef projede zaten bir ana malzeme yoksa, bu sorunsuz çalışmalıdır.
 
-As work on one or both projects progress their respective master materials may change to be tailored for their specific projects due to the course of normal development.
+Projelerden biri veya her ikisi üzerinde çalışma ilerledikçe, normal gelişim süreci nedeniyle ilgili ana materyalleri kendi özel projelerine uygun hale getirilmek üzere değişebilir.
 
-The issue comes when, for example, an artist for one project created a nice generic modular set of static meshes and someone wants to include that set of static meshes in the second project. If the artist who created the assets used material instances based on `Assets/MaterialLibrary/M_Master` as they're instructed to, when a migration is performed there is a great chance of conflict for the previously migrated `Assets/MaterialLibrary/M_Master` asset.
+Sorun, örneğin bir proje için bir sanatçı, güzel bir genel modüler static mesh kümesi oluşturduğunda ve birisi bu static mesh kümesini ikinci projeye dahil etmek istediğinde ortaya çıkıyor. assetlerı oluşturan sanatçı, talimat verildiği şekilde 'Assets/MaterialLibrary/M_Master'a dayalı malzeme örnekleri kullandıysa, bir taşıma gerçekleştirildiğinde, daha önce taşınan 'Assets/MaterialLibrary/M_Master' varlığı için büyük bir çakışma olasılığı vardır. .
 
-This issue can be hard to predict and hard to account for. The person migrating the static meshes may not be the same person who is familiar with the development of both project's master material, and they may not be even aware that the static meshes in question rely on material instances which then rely on the master material. The Migrate tool requires the entire chain of dependencies to work however, and so it will be forced to grab `Assets/MaterialLibrary/M_Master` when it copies these assets to the other project and it will overwrite the existing asset.
+Bu sorunu tahmin etmek zor ve hesaba katmak zor olabilir. static meshları taşıyan kişi, her iki projenin ana malzemesinin geliştirilmesine aşina olan aynı kişi olmayabilir ve söz konusu static meshların, daha sonra ana malzemeye dayanan maddi örneklere dayandığının farkında bile olmayabilirler. Ancak Migrate aracı, tüm bağımlılık zincirinin çalışmasını gerektirir ve bu nedenle, bu assetlerı diğer projeye kopyalarken 'Assets/MaterialLibrary/M_Master'ı almaya zorlanacak ve mevcut varlığın üzerine yazacaktır.
 
-It is at this point where if the master materials for both projects are incompatible in _any way_, you risk breaking possibly the entire material library for a project as well as any other dependencies that may have already been migrated, simply because assets were not stored in a top level folder. The simple migration of static meshes now becomes a very ugly task.
+Bu noktada, her iki proje için ana malzemeler _herhangi bir şekilde_ uyumsuzsa, bir proje için tüm malzeme kitaplığının yanı sıra halihazırda taşınmış olabilecek diğer bağımlılıkları bozma riskiyle karşı karşıya kalırsınız, çünkü assetler içinde depolanmamıştır. üst düzey bir klasör. static meshların basit geçişi artık çok çirkin bir görev hale gelir.
 
 <a name="2.2.3"></a>
-#### Samples, Templates, and 3rd Party Content Are Risk-Free
-An extension to [2.2.2](#2.2.2), if a team member decides to add sample content, template files, or assets they bought from a 3rd party, it is guaranteed that these new assets will not interfere with the project in any way unless your project's top level folder is not uniquely named.
+#### Samplelar, Templatelar ve 3rd taraf Contentler Risksiz Hale Gelir
+[2.2.2](#2.2.2)'ye bir uzantı olarak, projenizin en üst düzey klasörü benzersiz bir şekilde adlandırılmamış ise ve bir ekip üyesi sample, template veya bir üçüncü taraftan satın aldığı assetleri eklemeye karar verirse, bu yeni varlıkların projeye müdahale etmeyeceği garanti edilir
 
-You can not trust 3rd party content to fully conform to the [top level folder rule](#2.2). There exist many assets that have the majority of their content in a top level folder but also have possibly modified Unity sample content as well as level files polluting the global `Assets` folder.
+[Üst düzey klasör kuralına](#2.2) tam olarak uyması için 3. taraf içeriğine güvenemezsiniz. İçeriğinin çoğunluğu üst düzey bir klasörde bulunan, ancak muhtemelen Unity örnek içeriğinin yanı sıra genel "Assets" klasörünü kirleten düzey dosyalarına sahip birçok varlık vardır.
 
-When adhering to [2.2](#2.2), the worst 3rd party conflict you can have is if two 3rd party assets both have the same sample content. If all your assets are in a project specific folder, including sample content you may have moved into your folder, your project will never break.
+[2.2](#2.2)'ye uyarken, yaşayabileceğiniz en kötü 3. taraf çatışması, iki 3. taraf varlığının her ikisinin de aynı örnek içeriğe sahip olmasıdır. Tüm varlıklarınız, klasörünüze taşımış olabileceğiniz örnek içerik de dahil olmak üzere projeye özel bir klasördeyse, projeniz asla bozulmaz.
 
-#### DLC, Sub-Projects, and Patches Are Easily Maintained
-If your project plans to release DLC or has multiple sub-projects associated with it that may either be migrated out or simply not cooked in a build, assets relating to these projects should have their own separate top level content folder. This make cooking DLC separate from main project content far easier. Sub-projects can also be migrated in and out with minimal effort. If you need to change a material of an asset or add some very specific asset override behavior in a patch, you can easily put these changes in a patch folder and work safely without the chance of breaking the core project.
+#### DLC, alt projeler ve yamalar kolayca güncellenir 
+Projeniz DLC'yi yayınlamayı planlıyorsa veya bununla ilişkili birden fazla alt projeye sahipse, taşınabilecek veya bir yapı içinde pişirilmeyecekse, bu projelerle ilgili varlıkların kendi ayrı üst düzey içerik klasörleri olmalıdır. Bu, DLC'yi ana proje içeriğinden ayrı olarak çok daha kolay hale getirir. Alt projeler de minimum çabayla içeri ve dışarı taşınabilir. Bir varlığın malzemesini değiştirmeniz veya bir yamada bazı çok özel varlık geçersiz kılma davranışı eklemeniz gerekiyorsa, bu değişiklikleri kolayca bir yama klasörüne koyabilir ve çekirdek projeyi bozma şansı olmadan güvenle çalışabilirsiniz. 
 
 <a name="2.3"></a>
 <a name="structure-developers"></a>
-### 2.3 Use Developers Folder For Local Testing
-During a project's development, it is very common for team members to have a sort of 'sandbox' where they can experiment freely without risking the core project. Because this work may be ongoing, these team members may wish to put their assets on a project's source control server. Not all teams require use of Developer folders, but ones that do use them often run into a common problem with assets submitted to source control.
+### 2.3 Lokal testler için Developer Dosyasını kullanın
+Bir projenin geliştirilmesi sırasında, ekip üyelerinin çekirdek projeyi riske atmadan özgürce deney yapabilecekleri bir tür "sandbox"a sahip olmaları çok yaygındır. Bu çalışma devam ediyor olabileceğinden, bu ekip üyeleri varlıklarını bir projenin kaynak kontrol sunucusuna koymak isteyebilirler. Tüm ekipler Geliştirici klasörlerinin kullanılmasını gerektirmez, ancak bunları kullananlar genellikle kaynak denetimine gönderilen varlıklarla ilgili ortak bir sorunla karşılaşır. 
 
-It is very easy for a team member to accidentally use assets that are not ready for use which will cause issues once those assets are removed. For example, an artist may be iterating on a modular set of static meshes and still working on getting their sizing and grid snapping correct. If a world builder sees these assets in the main project folder, they might use them all over a level not knowing they could be subject to incredible change and/or removal. This causes massive amounts of re-working by everyone on the team to resolve.
+Bir ekip üyesinin, kullanıma hazır olmayan varlıkları yanlışlıkla kullanması çok kolaydır ve bu varlıklar kaldırıldığında sorunlara neden olur. Örneğin, bir sanatçı modüler bir statik ağ kümesi üzerinde yineleniyor olabilir ve hala boyutlandırmalarını ve ızgara yakalamalarını doğru hale getirmek için çalışıyor olabilir. Bir dünya oluşturucu bu varlıkları ana proje klasöründe görürse, inanılmaz bir değişime ve/veya kaldırılmaya tabi olabileceklerini bilmeden bunları bir düzeyde kullanabilir. Bu, ekipteki herkesin çözmek için büyük miktarlarda yeniden çalışmasına neden olur.
 
-If these modular assets were placed in a Developer folder, the world builder should never of had a reason to use them and the whole issue would never happen.
+Bu modüler varlıklar bir Geliştirici klasörüne yerleştirildiyse, dünya oluşturucunun bunları kullanmak için hiçbir nedeni olmamalıydı ve tüm sorun asla olmayacaktı.
 
-Once the assets are ready for use, an artist simply has to move the assets into the project specific folder. This is essentially 'promoting' the assets from experimental to production.
+Varlıklar kullanıma hazır olduğunda, bir sanatçının varlıkları projeye özel klasöre taşıması yeterlidir. Bu aslında varlıkları deneyselden üretime hazır hale taşımaktır.
 
 
 <a name="levels"></a>
-### 2.4 All [Scene](#terms-level-map) Files Belong In A Folder Called Levels
-Level files are incredibly special and it is common for every project to have its own map naming system, especially if they work with sub-levels or streaming levels. No matter what system of map organization is in place for the specific project, all levels should belong in `Assets/ProjectNameName/Levels`.
+### 2.4 Bütün [Scene](#terms-level-map) Dosyaları, Levels denen bir dosyanın içinde olmalıdır
+Seviye dosyaları inanılmaz derecede özeldir ve özellikle alt seviyeler veya akış seviyeleri ile çalışıyorlarsa, her projenin kendi harita adlandırma sistemine sahip olması yaygındır. Belirli bir proje için hangi harita organizasyonu sistemi mevcut olursa olsun, tüm seviyeler 'Assets/ProjectNameName/Levels'a ait olmalıdır.
 
-Being able to tell someone to open a specific map without having to explain where it is is a great time saver and general 'quality of life' improvement. It is common for levels to be within sub-folders of `Levels`, such as `Levels/Campaign1/` or `Levels/Arenas`, but the most important thing here is that they all exist within `Assets/ProjectNameName/Levels`.
+Birine, nerede olduğunu açıklamak zorunda kalmadan belirli bir haritayı açmasını söyleyebilmek, büyük bir zaman tasarrufu ve genel 'yaşam kalitesi' iyileştirmesidir. Seviyelerin 'Levels/Campaign1/' veya 'Levels/Arenas' gibi 'Levels' alt klasörlerinde olması yaygındır, ancak buradaki en önemli şey hepsinin 'Assets/ProjectName/Levels' içinde bulunmasıdır. .
 
-This also simplifies the job of cooking for engineers. Wrangling levels for a build process can be extremely frustrating if they have to dig through arbitrary folders for them. If a team's levels are all in one place, it is much harder to accidentally not cook a map in a build. It also simplifies lighting build scripts as well QA processes.
+Bu aynı zamanda mühendisler için pişirme işini de kolaylaştırır. Onlar için rastgele klasörleri kazmak zorundalarsa, bir derleme işlemi için seviye atlamaları son derece sinir bozucu olabilir. Bir takımın seviyeleri tek bir yerdeyse, bir yapıda yanlışlıkla bir harita pişirmemek çok daha zordur. Ayrıca, aydınlatma oluşturma komut dosyalarının yanı sıra QA süreçlerini de basitleştirir.
 
 <a name="2.5"></a>
 <a name="structure-ownership"></a>
-### 2.5 Define Ownership
-In teams of more than one, define ownership of zone/assets/features. Some assets like scenes or prefabs do not handle simultaneous changes by multiple people very well, creating conflict. Having a single person who can change (or give the right to change) a given assets helps to avoid that problem.
+### 2.5 Zone/Asset/Feature'ları Sahiplenin
+Birden fazla kişiden oluşan ekiplerde, zone/assets/featureların sahipliğini tanımlayın. Sahneler veya hazır yapılar gibi bazı varlıklar, birden fazla kişi tarafından yapılan eşzamanlı değişiklikleri çok iyi işlemez ve çatışma yaratır. Belirli bir varlığı değiştirebilecek (veya değiştirme hakkı verebilecek) tek bir kişiye sahip olmak, bu sorunun önlenmesine yardımcı olur. 
 
 <a name="2.6"></a>
 <a name="structure-assettypes"></a>
-### 2.6 Do Not Create Folders Called `Assets` or `AssetTypes`
+### 2.6 `Assets` veya `AssetTypes` diye dosyalar açmayın
 
 <a name="2.6.1"></a>
-#### Creating a folder named `Assets` is redundant.
-All assets are assets.
+#### 'Assets' adlı bir klasör oluşturmak gereksizdir. 
+Bütün assetler zaten assettir.
 
 <a name="2.6.2"></a>
-#### Creating a folder named `Meshes`, `Textures`, or `Materials` is redundant.
-All asset names are named with their asset type in mind. These folders offer only redundant information and the use of these folders can easily be replaced with the robust and easy to use filtering system the Content Browser provides.
+#### `Meshes`, `Textures`, veya `Materials` diye dosyalar açmak gereksizdir.
+Tüm varlık adları, varlık türleri göz önünde bulundurularak adlandırılır. Bu klasörler yalnızca fazla bilgi sunar ve bu klasörlerin kullanımı, Content Browser'ın sağladığı sağlam ve kullanımı kolay filtreleme sistemi ile kolayca değiştirilebilir.
 
-Want to view only static mesh in `Environment/Rocks/`? Simply turn on the Static Mesh filter. If all assets are named correctly, they will also be sorted in alphabetical order regardless of prefixes. Want to view both static meshes and skeletal meshes? Simply turn on both filters. this eliminates the need to potentially have to `Control-Click` select two folders in the Content Browser's tree view.
+`Environment/Rocks/` içinde yalnızca static mesh görüntülemek ister misiniz? Sadece  Static Mesh filtresini açın. Tüm varlıklar doğru şekilde adlandırılırsa, öneklerden bağımsız olarak alfabetik sırayla da sıralanırlar. Hem  Static Mesh hem de Skeletal Meshleri görüntülemek ister misiniz? Her iki filtreyi de açmanız yeterlidir. bu, İçerik Tarayıcının ağaç görünümünde potansiyel olarak 'Control-Click' ile iki klasör seçme ihtiyacını ortadan kaldırır.
 
-> This also extends the full path name of an asset for very little benefit. The `SM_` prefix for a static mesh is only three characters, whereas `Meshes/` is seven characters.
+> Bu aynı zamanda bir varlığın tam yol adını çok az fayda sağlayacak şekilde genişletir. Statik bir mesh için "SM_" öneki yalnızca üç karakterdir, "Meshes/" ise yedi karakterdir.
 
-Not doing this also prevents the inevitability of someone putting a static mesh or a texture in a `Materials` folder.
+Bunu yapmamak aynı zamanda birisinin 'Materials' klasörüne statik bir mesh veya textüre koymasının kaçınılmazlığını da önler.
 
 <a name="2.7"></a>
 <a name="structure-large-sets"></a>
@@ -804,13 +803,13 @@ Depending on how your asset variants are made, you can chain together variant na
 | Material Instance (Snow) | MI_Rock_Snow |
 
 <a name="asset-name-modifiers"></a>
-### 4.2 Asset Name Modifiers
+### 4.2 Asset Adlandırma Kuralları
 
-When naming an asset use these tables to determine the prefix and suffix to use with an asset's [Base Asset Name](#base-asset-name).
+Bir varlığı adlandırırken, bir varlığın [Asset İsmi](#base-asset-name) ile kullanılacak ön(prefix) eki ve son(suffix) eki belirlemek için bu tabloları kullanın. 
 
 #### Sections
 
-> 4.2.1 [Most Common](#anc-common)
+> 4.2.1 [En Yaygın](#anc-common)
 
 > 4.2.2 [Animations](#anc-animations)
 
@@ -833,11 +832,11 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 > 4.2.11 [Effects](#anc-effects)
 
 <a name="anc-common"></a>
-#### Most Common
+#### En Yaygın
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
-| Level / Scene           |  *          |            | [Should be in a folder called Levels.](#levels) e.g. `Levels/A4_C17_Parking_Garage.unity` |
+| Level / Scene           |  *          |            | [Levels diye bir dosyanın içinde olmalı.](#levels) e.g. `Levels/A4_C17_Parking_Garage.unity` |
 | Level (Persistent)      |            | _P         |                                  |
 | Level (Audio)           |            | _Audio     |                                  |
 | Level (Lighting)        |            | _Lighting  |                                  |
@@ -868,7 +867,7 @@ PascalCase
 
 #### 4.2.1b 3d Models (3ds Max)
 
-All meshes in 3ds Max are lowercase to differentiate them from their FBX export.
+Bütün 3ds Max 3d mesh exportları FBXlerden ayırabilmek için küçük harfle yazılmalıdır.
 
 | Asset Type    | Prefix | Suffix      | Notes                                   |
 | ------------- | ------ | ----------- | --------------------------------------- |
@@ -906,7 +905,7 @@ All meshes in 3ds Max are lowercase to differentiate them from their FBX export.
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Prefab         |        |            |                                  |
 | Prefab Instance         | I       |            |                                  |
-| Scriptable Object       |     |        | Assigned "Blueprint" label in Editor |
+| Scriptable Object       |     |        |  Editörde "Blueprint" labelı koyulmalıdır. |
 
 <a name="anc-materials"></a>
 
@@ -941,12 +940,12 @@ All meshes in 3ds Max are lowercase to differentiate them from their FBX export.
 
 <a name="anc-textures-packing"></a>
 
-#### 4.2.6.1 Texture Packing
-It is common practice to pack multiple layers of texture data into one texture. An example of this is packing Emissive, Roughness, Ambient Occlusion together as the Red, Green, and Blue channels of a texture respectively. To determine the suffix, simply stack the given suffix letters from above together, e.g. `_ERO`.
+#### 4.2.6.1 Texture Paketleme
+Birden çok doku verisi katmanını tek bir dokuda paketlemek yaygın bir uygulamadır. Bunun bir örneği, bir dokunun sırasıyla Kırmızı, Yeşil ve Mavi kanalları olarak Yayıcı, Pürüzlülük, Ortam Oklüzyonunu birlikte paketlemesidir. Son eki belirlemek için, verilen son ek harflerini yukarıdan bir araya getirmeniz yeterlidir, ör. '_ERO'.
 
-> It is generally acceptable to include an Alpha/Opacity layer in your Diffuse/Albedo's alpha channel and as this is common practice, adding `A` to the `_D` suffix is optional.
+> Diffuse/Albedo'nuzun alfa kanalına bir Alfa/Opaklık katmanı eklemek genellikle kabul edilebilir ve bu yaygın bir uygulama olduğundan, "_D" son ekine "A" eklemek isteğe bağlıdır.
 
-Packing 4 channels of data into a texture (RGBA) is not recommended except for an Alpha/Opacity mask in the Diffuse/Albedo's alpha channel as a texture with an alpha channel incurs more overhead than one without.
+Diffuse/Albedo'nun alfa kanalındaki bir Alfa/Opaklık maskesi dışında bir dokuya (RGBA) 4 kanal verinin paketlenmesi önerilmez, çünkü alfa kanallı bir doku, olmayandan daha fazla yüke neden olur. 
 <a name="anc-misc"></a>
 
 #### 4.2.7 Miscellaneous
@@ -973,7 +972,7 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Audio Clip     | A_     |        |                                                              |
 | Audio Mixer    | MIX_   |        |                                                              |
 | Dialogue Voice | DV_    |        |                                                              |
-| Audio Class    |        |        | No prefix/suffix. Should be put in a folder called AudioClasses |
+| Audio Class    |        |        | Prefix/suffix kullanımı yok. AudioClasses dosyasına konulması gerekmektedir. |
 
 <a name="anc-ui"></a>
 #### 4.2.10 User Interface
@@ -991,16 +990,14 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 
 <a name="asset-workflows"></a>
 
-## 5. Asset Workflows
+## 5. Asset Workflowu
 
-This section describes best practices for creating and importing assets usable in Unity.
+Bu bölüm, Unity'de kullanılabilen assetlerı oluşturmaya ve içe aktarmaya yönelik en iyi uygulamaları açıklar. 
 
 <a name="toc"></a>
 ### Sections
 
 > 5.1 [Unity Asset Import Settings](#unityimport)
->
-> 5.2 [3ds Max](#3dsmax)
 >
 > 5.3 [Textures](#textures)
 >
@@ -1010,116 +1007,11 @@ This section describes best practices for creating and importing assets usable i
 
 ### 5.1 Unity Asset Import Settings
 
-Unity's [AssetPostprocessor](https://docs.unity3d.com/ScriptReference/AssetPostprocessor.html) lets you hook into the import pipeline and run scripts prior to or after importing assets. This allows you to enforce import settings when assets are first imported into the project. For example textures that end with `_N` can be marked as a Normal Map on import.
+Unitynin [AssetPostprocessor'ü](https://docs.unity3d.com/ScriptReference/AssetPostprocessor.html) assetleri içe aktarmadan önce veya sonra içe aktarma işlem hattına bağlanmanıza ve komut dosyalarını çalıştırmanıza olanak tanır. Bu, assetler projeye ilk kez içe aktarıldığında içe aktarma ayarlarını uygulamanıza olanak tanır. Örneğin import ederken sonu `_N` ile biten textürler otomatik olarak Normal Map olarak işaretlenebilir.
 
-Example guide for Import Settings:
+İçe Aktarma Ayarları için örnek kılavuz:
 
 https://github.com/justinwasilenko/Unity-AssetPostProcessor
-
-<a name="3dsmax"></a>
-### 5.2 3ds Max
-
-Unity guide on importing from 3ds Max:
-
-https://docs.unity3d.com/2017.4/Documentation/Manual/HOWTO-ImportObjectMax.html
-
-Unity tutorial on the FBX Exporter Package for FBX roundtrip:
-
-https://learn.unity.com/project/3ds-max-to-unity-pipeline
-
-#### Setting up 3ds Max
-
-Unity uses 1 unit = 1 meter. Setup 3ds Max to use Meters by going to ```Customize/Units Setup/System Unit Setup``` and set to 1 Unit = 1 Meter. Using the correct scale is very important for correct Physics / GI / and VR interaction.
-
-Animation frame rate in 3ds Max should be set to 30fps. The ```Time Configuration``` dialog box has 3ds Max's FPS settings
-
-##### Working with Small Objects
-
-* Set ```Customize > Customize User Interface > Mouse Wheel Zoom Increment``` to 0.1m to stop over zooming
-
-* Turn on Viewport Clipping and set the slider on the side of the viewport to be able to zoom in on small meshes. (https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/sfdcarticles/sfdcarticles/Viewport-Clipping.html)
-
-#### Modeling in 3ds Max
-
-* Follow the [asset naming convention](#anc-models)
-* Avoid super long thin triangles (Speeds up tile based renderers & helps with proper GI baking)
-* Use Area and Angle Weighted Mesh Normals (Unity Import Setting or Create in 3ds Max)
-
-#### Exporting from 3ds Max into Unity
-
-##### Export Settings:
-
-- Triangulate On
-- Tangents and Binormals Off
-- Smoothing Groups On
-- Preserve edge orientation On
-- Units - Automatic Off / Scene Units converted to Meters
-- Axis Conversion Z-up
-
-Models created in 3ds Max use a different coordinate system then Unity. Models need to have their pivot point rotated +90 degrees on the X axis to import into Unity correctly.
-
-To do this quickly, open the MaxScript editor, paste this code and select and drag this code on to a Toolbar in 3ds Max to create a button that will run this script. It applies a Xform modifier to rotate the pivot before exporting.
-
-```
-fn RotateCreationPivot obj rot =
-(
-select obj
-modPanel.addModToSelection (XForm ()) ui:on
-obj.modifiers[#XForm].gizmo.rotation += rot as quat
-rotate obj (inverse rot as quat)
-)
-RotateCreationPivot $ (eulerToQuat(eulerAngles 90 0 0))
-```
-
-
-Script to rotate all objects in 3ds Max scene for export
-
-```
-(
-    mapped fn ProcessObjectsForUnity node =
-    (
-        resetxform node
-        tm = rotatexmatrix 90
-        tm.row4 = node.pos
-        node.transform = tm
-        node.objectoffsetrot = eulerangles -90 0 0
-    )
-    
-    ProcessObjectsForUnity geometry
-)
-```
-
-* Batch Exporter for 3ds Max (http://www.strichnet.com/improving-the-fbx-workflow-between-3ds-max-and-unity3d/)
-
-##### Exporting CAT Animation to FBX
-
-Bind normal bones to the CAT rig for use in skinning and exporting
-
-###### Bind Pose
-
-Set Motion Panel/Layer Manager/"Setup/Animation Mode" Toggle to ```Red```
-Select only the bones and the mesh you wish to export
-Export naming: ModelName.FBX
-
-###### Animation
-
-Set Motion Panel/Layer Manager/"Setup/Animation Mode" to ```Green```
-Select ONLY the bones required in your hierarchy (These should match the exact same bones used for Bind Pose), don't include the mesh.
-Export naming: ModelName@AnimationName.FBX
-The @ symbol is a special Unity naming convention allowing the animation to be bound to the Human.fbx in the Unity editor
-
-#### Importing from 3ds Max into Unity
-
-If importing only animation or bones from a FBX: 
-
-* Set ```Preserve Hierarchy Model``` import option to ```True```
-* Set ```Rig > Avatar Definition``` to ```Copy From Other Avatar```
-
-MaxListener Window, set width and height of selected bones, maybe objects too?
-$.width = 0.01
-$.height = 0.01
-
-**[⬆ Back to Top](#table-of-contents)**
 
 <a name="textures"></a>
 ### 5.3 Textures
