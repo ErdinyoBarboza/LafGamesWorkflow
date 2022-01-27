@@ -1020,12 +1020,12 @@ https://github.com/justinwasilenko/Unity-AssetPostProcessor
 * İkinin katı olmalılar (Örneğin, 512 x 512 or 256 x 1024).
 * Mümkün olduğunca Textüre Atlası kullanın.
 * 3D yazılımı, kaydettiğinizde veya dışa aktardığınızda tutarlılık için Unity proje textürelerine işaret etmelidir. 
-* It is better to resize the texture in Photoshop then to use Unity’s compression options when the in game texture resolution is already known. This reduces the file size and import time of the texture into Unity.
-* When working with a high-resolution source PSD outside your Unity project use the same name for both the high-resolution and the imported Unity file. This allows quick iteration when swapping between the 2 textures.
+* Oyun içi texture çözünürlüğü zaten biliniyorsa dokuyu Photoshop'ta yeniden boyutlandırmak, Unity'nin sıkıştırma seçeneklerini kullanmaktan daha iyidir. Bu, dosya boyutunu azaltır ve dokunun Unity'nin içine aktarılma süresini azaltır.
+* Unity projenizin dışında yüksek çözünürlüklü bir kaynak PSD ile çalışırken, hem yüksek çözünürlüklü hem de içe aktarılan Unity dosyası için aynı adı kullanın. Bu, 2 doku arasında geçiş yaparken hızlı yinelemeye izin verir. 
 
-More information for importing textures can be found here: [https://docs.unity3d.com/Manual/ImportingTextures.html](https://docs.unity3d.com/Manual/ImportingTextures.html)
+Textürleri içe aktarmak ile ilgili daha fazla bilgiyi burada bulabilirsiniz: [https://docs.unity3d.com/Manual/ImportingTextures.html](https://docs.unity3d.com/Manual/ImportingTextures.html)
 
-Textures requiring the use of a Alpha channel should follow this guide: [https://docs.unity3d.com/Manual/HOWTO-alphamaps.html](https://docs.unity3d.com/Manual/HOWTO-alphamaps.html)
+Alfa kanalının kullanılmasını gerektiren textürler bu kılavuzu takip etmelidir: [https://docs.unity3d.com/Manual/HOWTO-alphamaps.html](https://docs.unity3d.com/Manual/HOWTO-alphamaps.html)
 
 ##### Texture File Format
 
@@ -1036,9 +1036,9 @@ Bütün textürler .PSD formatında olmalıdır. Dosyanın layerları olmamalı 
 <a name="audio"></a>
 ### 5.4 Audio
 
-Only import uncompressed audio files in to Unity using WAV or AIFF formats.
+Unity'e sadece kompresse edilmemiş WAV or AIFF formatlarında ses yükleyin.
 
-Great guide on [Unity Audio Import Optimization](https://www.gamasutra.com/blogs/ZanderHulme/20190107/333794/Unity_Audio_Import_Optimisation__getting_more_BAM_for_your_RAM.php)
+Güzel bir guide: [Unity Audio Import Optimization](https://www.gamasutra.com/blogs/ZanderHulme/20190107/333794/Unity_Audio_Import_Optimisation__getting_more_BAM_for_your_RAM.php)
 
 **[⬆ Back to Top](#table-of-contents)**
 
