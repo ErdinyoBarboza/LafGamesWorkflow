@@ -48,7 +48,7 @@ Bir ekip içinde çalışırken veya bir topluluk içinde tartışırken, insanl
 
 <a name="terms-prefab"></a>
 #### Prefabs
-Unity, yeniden kullanılabilir bir Prefab olarak tüm bileşenleri, özellik değerleri ve alt GameObject'leri ile eksiksiz bir GameObject oluşturmanıza, yapılandırmanıza ve saklamanıza izin veren bir sistem için Prefabrik terimini kullanır. 
+Unity, yeniden kullanılabilir bir Prefab olarak tüm bileşenleri, özellik değerleri ve alt GameObject'leri ile eksiksiz bir GameObject oluşturmanıza, yapılandırmanıza ve saklamanıza izin veren bir sistem için Prefab terimini kullanır. 
 
 <a name="terms-level-map"></a>
 #### Levels/Maps/Scene
@@ -1014,12 +1014,12 @@ Unitynin [AssetPostprocessor'ü](https://docs.unity3d.com/ScriptReference/AssetP
 https://github.com/justinwasilenko/Unity-AssetPostProcessor
 
 <a name="textures"></a>
-### 5.3 Textures
+### 5.3 Textürler
 
-* Textures follow the [naming convention](#anc-textures) found above. 
-* They are a power of two (For example, 512 x 512 or 256 x 1024).
-* Use Texture Atlases wherever possible.
-* 3D software should point to the Unity project textures for consistency when you save or export.
+* Textürler yukarıdaki [isimlendirme kurallarını](#anc-textures) kullanır. 
+* İkinin katı olmalılar (Örneğin, 512 x 512 or 256 x 1024).
+* Mümkün olduğunca Textüre Atlası kullanın.
+* 3D yazılımı, kaydettiğinizde veya dışa aktardığınızda tutarlılık için Unity proje textürelerine işaret etmelidir. 
 * It is better to resize the texture in Photoshop then to use Unity’s compression options when the in game texture resolution is already known. This reduces the file size and import time of the texture into Unity.
 * When working with a high-resolution source PSD outside your Unity project use the same name for both the high-resolution and the imported Unity file. This allows quick iteration when swapping between the 2 textures.
 
@@ -1029,7 +1029,7 @@ Textures requiring the use of a Alpha channel should follow this guide: [https:/
 
 ##### Texture File Format
 
-All textures should be of the .PSD format. No layers should be included and only one Alpha channel in the imported file.
+Bütün textürler .PSD formatında olmalıdır. Dosyanın layerları olmamalı ve sadece bir adet Alpha channel olmalıdır.
 
 **[⬆ Back to Top](#table-of-contents)**
 
