@@ -67,8 +67,9 @@ Bir şeyleri adlandırmanın birkaç farklı yolu vardır. İşte bazı yaygın 
 > 
 > ##### camelCase
 > İlk harf küçük ancak sonraki bütün kelimeler büyük harfli ve boşluksuz, e.g. `desertEagle`, `styleGuide`, `aSeriesOfWords`.
+
 >  ##### lowercase
-> All letters are lowercase, e.g. `deserteagle`, 
+> Bütün harfler küçük harf, e.g. `deserteagle`, 
 >
 > ##### Snake_case
 > Büyük yada küçük harfi önemsemeden ancak boşlukları _ ile değiştir, e.g. `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
@@ -177,7 +178,7 @@ Bu yapılandırmayı kullanmamızın sebepleri aşağıdakilerdir.
 Bunlar, içerik yapısındaki(content structure) herhangi bir klasörü adlandırmak için ortak kurallardır. 
 
 <a name="2.1.1"></a>
-#### AHerzaman [PascalCase](#terms-cases) kullanın
+#### Herzaman [PascalCase](#terms-cases) kullanın
 PascalCase, bir isme büyük harfle başlamayı ifade eder ve ardından boşluk kullanmak yerine, takip eden her kelime büyük harfle başlar. Örneğin, "DesertEagle", "RocketPistol" ve "ASeriesOfWords". 
 
 <a name="2.1.2"></a>
@@ -754,30 +755,29 @@ Bad examples:
 <a name="anc"></a>
 <a name="4"></a>
 
-## 4. Asset Naming Conventions
-Naming conventions should be treated as law. A project that conforms to a naming convention is able to have its assets managed, searched, parsed, and maintained with incredible ease.
+## 4. Asset İsimlendirme Kuralları
+Adlandırma kuralları kanun olarak kabul edilmelidir. Bir adlandırma kuralına uyan bir proje, assetlerinin inanılmaz bir kolaylıkla yönetilmesini, aranmasını, ayrıştırılmasını ve sürdürülmesini sağlayabilir.
 
-Most things are prefixed with the prefix generally being an acronym of the asset type followed by an underscore.
+Çoğu şeyin önüne, genellikle varlık türünün bir kısaltması olan önek eklenir ve ardından bir alt çizgi gelir.
 
-**Assets use [PascalCase](#cases)**
+**Assetler [PascalCase](#cases) Kullanır**
 
 <a name="base-asset-name"></a>
 <a name="4.1"></a>
 ### 4.1 Base Asset Name - `Prefix_BaseAssetName_Variant_Suffix`
-All assets should have a _Base Asset Name_. A Base Asset Name represents a logical grouping of related assets. Any asset that is part of this logical group 
-should follow the the standard of  `Prefix_BaseAssetName_Variant_Suffix`.
+Bütün assetlerin bir _Base Asset Name_'e sahip olması lazım. Temel Varlık Adı, ilgili varlıkların mantıksal bir gruplamasını temsil eder. Bu mantıksal grubun parçası olan herhangi bir varlık "Prefix_BaseAssetName_Variant_Suffix" standardını takip etmelidir. 
 
-Keeping the pattern `Prefix_BaseAssetName_Variant_Suffix` in mind and using common sense is generally enough to warrant good asset names. Here are some detailed rules regarding each element.
+`Prefix_BaseAssetName_Variant_Suffix` kalıbını akılda tutmak ve sağduyuyu kullanmak, iyi varlık adlarını garanti etmek için genellikle yeterlidir. İşte her bir elementle ilgili bazı ayrıntılı kurallar.
 
-`Prefix` and `Suffix` are to be determined by the asset type through the following [Asset Name Modifier](#asset-name-modifiers) tables.
+`Prefix` ve `Suffix`, aşağıdaki [Asset Adı Modifiyeleri](#asset-name-modifiers) tabloları aracılığıyla varlık türüne göre belirlenecektir.
 
-`BaseAssetName` should be determined by short and easily recognizable name related to the context of this group of assets. For example, if you had a character named Bob, all of Bob's assets would have the `BaseAssetName` of `Bob`.
+`BaseAssetName`, bu asset grubunun bağlamıyla ilgili kısa ve kolayca tanınabilir bir adla belirlenmelidir. Örneğin, Bob adında bir karakteriniz olsaydı, Bob'un tüm assetlerinin `BaseAssetName`i `Bob` olurdu
 
-For unique and specific variations of assets, `Variant` is either a short and easily recognizable name that represents logical grouping of assets that are a subset of an asset's base name. For example, if Bob had multiple skins these skins should still use `Bob` as the `BaseAssetName` but include a recognizable `Variant`. An 'Evil' skin would be referred to as `Bob_Evil` and a 'Retro' skin would be referred to as `Bob_Retro`.
+Varlıkların benzersiz ve belirli varyasyonları için, "Varyant", bir varlığın temel adının bir alt kümesi olan varlıkların mantıksal gruplandırmasını temsil eden kısa ve kolayca tanınabilir bir addır. Örneğin, Bob'un birden fazla dış görünümü varsa, bu dış görünümler yine de "TemelAssetName" olarak "Bob"u kullanmalı, ancak tanınabilir bir "Varyant" içermelidir. Bir 'Evil' dış görünümü, 'Bob_Evil' olarak anılacaktır ve bir 'Retro' dış görünümü, 'Bob_Retro' olarak anılacaktır.
 
-For unique but generic variations of assets, `Variant` is a two digit number starting at `01`. For example, if you have an environment artist generating nondescript rocks, they would be named `Rock_01`, `Rock_02`, `Rock_03`, etc. Except for rare exceptions, you should never require a three digit variant number. If you have more than 100 assets, you should consider organizing them with different base names or using multiple variant names.
+Varlıkların benzersiz ancak genel varyasyonları için "Varyant", "01" ile başlayan iki basamaklı bir sayıdır. Örneğin, sıradan olmayan kayalar üreten bir ortam sanatçınız varsa, bunlar 'Rock_01', 'Rock_02', 'Rock_03' vb. olarak adlandırılır. Nadir istisnalar dışında, asla üç basamaklı bir değişken numarasına ihtiyaç duymamalısınız. 100'den fazla varlığınız varsa, bunları farklı temel adlarla veya birden çok varyant adı kullanarak düzenlemeyi düşünmelisiniz.
 
-Depending on how your asset variants are made, you can chain together variant names. For example, if you are creating flooring assets for an Arch Viz project you should use the base name `Flooring` with chained variants such as `Flooring_Marble_01`, `Flooring_Maple_01`, `Flooring_Tile_Squares_01`.
+Varlık varyantlarınızın nasıl yapıldığına bağlı olarak varyant adlarını birlikte zincirleyebilirsiniz. Örneğin, bir Arch Viz projesi için döşeme varlıkları oluşturuyorsanız, 'Flooring_Marble_01', 'Flooring_Maple_01', 'Flooring_Tile_Squares_01' gibi zincirleme varyantlarla 'Flooring' temel adını kullanmalısınız.
 
 <a name="1.1-examples"></a>
 #### Examples
