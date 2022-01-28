@@ -358,14 +358,14 @@ Bu bölüm, C# sınıflarına ve içlerine odaklanacaktır. Mümkün olduğunda,
 > 3.4 [Functions](#functions)
 
 <a name="classorganization"></a>
-### 3.1 Class Organization
-Source files should contain only one public type, although multiple internal classes are allowed.
+### 3.1 Class Organizasyonu
+Birden çok internal classa izin verilmesine rağmen, kaynak dosyalarda yalnızca bir public type olmalıdır.
 
-Source files should be given the name of the public class in the file.
+Kaynak dosyalara, dosyadaki public classın adı verilmelidir.
 
-Organize namespaces with a clearly defined structure,
+Açıkça tanımlanmış bir yapı ile ad alanlarını düzenleyin, 
 
-Class members should be alphabetized, and grouped into sections:
+Class memberları should be alfabetik olmalı, ve bölümlere gruplandırılmalıdır:
 * Constant Fields
 * Static Fields
 * Fields
@@ -377,7 +377,7 @@ Class members should be alphabetized, and grouped into sections:
 * Private Methods
 * Nested types
 
-Within each of these groups order by access:
+Bu grupların içi ise accesse göre sıralandırılmalıdır:
 * public
 * internal
 * protected
@@ -437,15 +437,15 @@ namespace ProjectName
 ```
 
 #### Script Templates
-To save some time you can overwrite Unity's default script template with your own  to automatically setup the namespace and regions etc. See this Unity [support](https://support.unity3d.com/hc/en-us/articles/210223733-How-to-customize-Unity-script-templates) article to learn how.
+Biraz zaman kazanmak için, ad alanını ve bölgeleri vb. otomatik olarak ayarlamak için Unity'nin default script template'ının üzerine kendinizinkini yazabilirsiniz. Bunu şu articledan öğrenebilirsiniz: [support](https://support.unity3d.com/hc/en-us/articles/210223733-How-to-customize-Unity-script-templates)
 
 <a name="namespace"></a>
 #### Namespace
-Use a namespace to ensure your scoping of classes/enum/interface/etc won't conflict with existing ones from other namespaces or the global namespace. The project should at minimum use the projects name for the Namespace to prevent conflicts with any imported Third Party assets.
+Sınıflar/enum/arayüz/vb kapsamınızın diğer ad alanlarından veya genel ad alanından mevcut olanlarla çakışmayacağından emin olmak için bir ad alanı kullanın. Proje, içe aktarılan Üçüncü Taraf varlıklarıyla çakışmaları önlemek için en azından Ad Alanı için proje adını kullanmalıdır.
 
-#### All Public Functions Should Have A Summary
-
-Simply, any function that has an access modifier of Public should have its summary filled out. 
+#### Tüm Public İşlevlerinin Bir Özeti Olmalıdır
+ 
+Kısacası, Public'e access modifier'ı olan herhangibir functionun summary/özeti olmalıdır.
 
 ```
 /// <summary>
@@ -458,7 +458,7 @@ public void Fire()
 ```
 
 #### Foldout Groups
-If a class has only a small number of variables, Foldout Groups are not required.
+Bir sınıfın yalnızca az sayıda değişkeni varsa, Katlamalı Gruplar/Foldout Gruplar gerekli değildir.
 
 If a class has a moderate amount of variables (5-10), all [Serializable](#serializable) variables should have a non-default Foldout Group assigned. A common category is `Config`.
 
@@ -686,7 +686,7 @@ These questions and more can all be answered when functions are named appropriat
 #### All Functions Should Be Verbs
 All functions and events perform some form of action, whether its getting info, calculating data, or causing something to explode. Therefore, all functions should start with verbs. They should be worded in the present tense whenever possible. They should also have some context as to what they are doing.
 
-Good examples:
+İyi örnekler:
 
 * `Fire` - Good example if in a Character / Weapon class, as it has context. Bad if in a Barrel / Grass / any ambiguous class.
 * `Jump` - Good example if in a Character class, otherwise, needs context.
@@ -697,22 +697,22 @@ Good examples:
 * `GetCoordinates`
 * `UpdateTransforms`
 * `EnableBigHeadMode`
-* `IsEnemy` - ["Is" is a verb.](http://writingexplained.org/is-is-a-verb)
+* `IsEnemy` - ["Is" bir fiildir.](http://writingexplained.org/is-is-a-verb)
 
-Bad examples:
+Kötü örnekler:
 
-* `Dead` - Is Dead? Will deaden?
+* `Dead` - Dead mi? Yoksa Öldürme mi?
 * `Rock`
-* `ProcessData` - Ambiguous, these words mean nothing.
-* `PlayerState` - Nouns are ambiguous.
-* `Color` - Verb with no context, or ambiguous noun.
+* `ProcessData` - Belirsiz, bu kelimeler hiçbir şey ifade etmiyor.
+* `PlayerState` - İsimler belirsizdir.
+* `Color` - Bağlamsız bir fiil, veya belirsiz bir isim .
 
 #### Functions Returning Bool Should Ask Questions
 When writing a function that does not change the state of or modify any object and is purely for getting information, state, or computing a yes/no value, it should ask a question. This should also follow [the verb rule](#function-verbrule).
 
 This is extremely important as if a question is not asked, it may be assumed that the function performs an action and is returning whether that action succeeded.
 
-Good examples:
+İyi örnekler:
 
 * `IsDead`
 * `IsOnFire`
@@ -724,19 +724,19 @@ Good examples:
 * `WasCharging` - ["Was" is past-tense of "be".](http://grammar.yourdictionary.com/parts-of-speech/verbs/Helping-Verbs.html) Use "was" when referring to 'previous frame' or 'previous state'.
 * `CanReload` - ["Can" is a verb.](http://grammar.yourdictionary.com/parts-of-speech/verbs/Helping-Verbs.html)
 
-Bad examples:
+Kötü örnekler:
 
-* `Fire` - Is on fire? Will fire? Do fire?
-* `OnFire` - Can be confused with event dispatcher for firing.
-* `Dead` - Is dead? Will deaden?
-* `Visibility` - Is visible? Set visibility? A description of flying conditions?
+* `Fire` - Ateş mi yapsın? Yanıyor mu? Yanacak mı?
+* `OnFire` - Event Dispatcher ile karıştırılabilir.
+* `Dead` - Öldü mü? Ölüleşecek mi?
+* `Visibility` - Visible mı? Visibility ayarı mı?
 
 #### Event Handlers and Dispatchers Should Start With `On`
 Any function that handles an event or dispatches an event should start with `On` and continue to follow [the verb rule](#function-verbrule).
 
-Good examples:
+İyi örnekler:
 
-* `OnDeath` - Common collocation in games
+* `OnDeath` - Yaygın bir örnek
 * `OnPickup`
 * `OnReceiveMessage`
 * `OnMessageRecieved`
@@ -744,7 +744,7 @@ Good examples:
 * `OnClick`
 * `OnLeave`
 
-Bad examples:
+Kötü örnekler:
 
 * `OnData`
 * `OnTarget`
@@ -763,7 +763,7 @@ Adlandırma kuralları kanun olarak kabul edilmelidir. Bir adlandırma kuralına
 <a name="base-asset-name"></a>
 <a name="4.1"></a>
 ### 4.1 Base Asset Name - `Prefix_BaseAssetName_Variant_Suffix`
-Bütün assetlerin bir _Base Asset Name_'e sahip olması lazım. Temel Varlık Adı, ilgili varlıkların mantıksal bir gruplamasını temsil eder. Bu mantıksal grubun parçası olan herhangi bir varlık "Prefix_BaseAssetName_Variant_Suffix" standardını takip etmelidir. 
+Bütün assetlerin bir _Base Asset Name_'e sahip olması lazım. Temel Varlık Adı, ilgili varlıkların mantıksal bir gruplamasını temsil eder. Bu mantıksal grubun parçası olan herhangi bir varlık `Prefix_BaseAssetName_Variant_Suffix` standardını takip etmelidir. 
 
 `Prefix_BaseAssetName_Variant_Suffix` kalıbını akılda tutmak ve sağduyuyu kullanmak, iyi varlık adlarını garanti etmek için genellikle yeterlidir. İşte her bir elementle ilgili bazı ayrıntılı kurallar.
 
@@ -844,7 +844,7 @@ Bir varlığı adlandırırken, bir varlığın [Asset İsmi](#base-asset-name) 
 | Material                | M_         |            |                                  |
 | Static Mesh             | SM_       |            |                                  |
 | Skeletal Mesh           | SK_       |            |                                  |
-| Texture                 | T_         | _?         | See [Textures](#anc-textures)    |
+| Texture                 | T_         | _?         | Bkz [Textures](#anc-textures)    |
 | Particle System         | PS_       |            |                                  |
 
 <a name="anc-models"></a>
@@ -869,7 +869,7 @@ Bütün 3ds Max 3d mesh exportları FBXlerden ayırabilmek için küçük harfle
 
 | Asset Type    | Prefix | Suffix      | Notes                                   |
 | ------------- | ------ | ----------- | --------------------------------------- |
-| Mesh          |        | _mesh_lod0* | Only use LOD suffix if model uses LOD's |
+| Mesh          |        | _mesh_lod0* | LOD suffixini sadece LOD kullanıyorsanız ekleyin |
 | Mesh Collider |        | _collider   |                                         |
 
 <a name="anc-animations"></a>
@@ -929,7 +929,7 @@ Bütün 3ds Max 3d mesh exportları FBXlerden ayırabilmek için küçük harfle
 | Texture (Emissive)      | T_         | _E         |                                  |
 | Texture (Mask)          | T_         | _M         |                                  |
 | Texture (Specular)      | T_         | _S         |                                  |
-| Texture (Packed)        | T_         | _*         | See notes below about [packing](#anc-textures-packing). |
+| Texture (Packed)        | T_         | _*         | Aşağıdaki başlığa bakınız [packing](#anc-textures-packing). |
 | Texture Cube            | TC_       |            |                                  |
 | Media Texture           | MT_       |            |                                  |
 | Render Target           | RT_       |            |                                  |
