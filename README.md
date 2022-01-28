@@ -308,15 +308,15 @@ Her bir assetin benzersiz bir amacı olduğu, çok sayıda ilgili dosya içeren 
 <a name="structure-material-library"></a>
 ### 2.8 `MaterialLibrary`
 
-If your project makes use of master materials, layered materials, or any form of reusable materials or textures that do not belong to any subset of assets, these assets should be located in `Assets/ProjectName/MaterialLibrary`.
+Projeniz ana malzemelerden, katmanlı malzemelerden veya varlıkların herhangi bir alt kümesine ait olmayan herhangi bir yeniden kullanılabilir malzeme veya dokudan yararlanıyorsa, bu varlıklar `Assets/ProjectName/MaterialLibrary`de bulunmalıdır.
 
-This way all 'global' materials have a place to live and are easily located.
+Bu şekilde tüm 'global' materyallerin yaşayacak bir yeri olur ve kolayca bulunur.
 
-> This also makes it incredibly easy to enforce a 'use material instances only' policy within a project. If all artists and assets should be using material instances, then the only regular material assets that should exist are within this folder. You can easily verify this by searching for base materials in any folder that isn't the `MaterialLibrary`.
+> Bu aynı zamanda bir proje içinde 'yalnızca materyal instanceları kullanın' politikasının uygulanmasını inanılmaz derecede kolaylaştırır. Tüm sanatçılar ve assetler malzeme instanceları kullanıyorsa, sadece standard materyal assetleri bu klasördedir. `MaterialLibrary` olmayan herhangi bir klasörde temel malzemeleri arayarak bunu kolayca doğrulayabilirsiniz.
 
-The `MaterialLibrary` doesn't have to consist of purely materials. Shared utility textures, material functions, and other things of this nature should be stored here as well within folders that designate their intended purpose. For example, generic noise textures should be located in `MaterialLibrary/Utility`.
+`MaterialLibrary` tamamen malzemelerden oluşmak zorunda değildir. Paylaşılan yardımcı dokular, malzeme işlevleri ve bu nitelikteki diğer şeyler burada da amaçlarını belirleyen klasörler içinde saklanmalıdır. Örneğin, genel noise dokuları `MaterialLibrary/Utility` içinde bulunmalıdır.
 
-Any testing or debug materials should be within `MaterialLibrary/Debug`. This allows debug materials to be easily stripped from a project before shipping and makes it incredibly apparent if production assets are using them if reference errors are shown.
+Herhangi bir test veya hata ayıklama materyali "MaterialLibrary/Debug" içinde olmalıdır. Bu, hata ayıklama malzemelerinin sevkıyattan önce bir projeden kolayca çıkarılmasını sağlar ve referans hataları gösteriliyorsa üretim varlıklarının bunları kullanıp kullanmadığını inanılmaz derecede belirgin hale getirir.
 
 <a name="2.9"></a>
 <a name="scene-structure"></a>
