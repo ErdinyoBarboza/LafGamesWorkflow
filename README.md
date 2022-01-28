@@ -308,7 +308,7 @@ Her bir assetin benzersiz bir amacı olduğu, çok sayıda ilgili dosya içeren 
 <a name="structure-material-library"></a>
 ### 2.8 `MaterialLibrary`
 
-Projeniz ana malzemelerden, katmanlı malzemelerden veya varlıkların herhangi bir alt kümesine ait olmayan herhangi bir yeniden kullanılabilir malzeme veya dokudan yararlanıyorsa, bu varlıklar `Assets/ProjectName/MaterialLibrary`de bulunmalıdır.
+Projeniz ana materialler, sub materialler veya assetlerin herhangi bir alt grubuna ait olmayan herhangi bir yeniden kullanılabilir malzeme veya textürden yararlanıyorsa, bu assetler `Assets/ProjectName/MaterialLibrary`de bulunmalıdır.
 
 Bu şekilde tüm 'global' materyallerin yaşayacak bir yeri olur ve kolayca bulunur.
 
@@ -321,7 +321,8 @@ Herhangi bir test veya hata ayıklama materyali "MaterialLibrary/Debug" içinde 
 <a name="2.9"></a>
 <a name="scene-structure"></a>
 ## 2.9 Scene Structure
-Proje hiyerarşisinin yanında sahne hiyerarşisi de var. Daha önce olduğu gibi, size bir şablon sunacağız. İhtiyaçlarınıza göre ayarlayabilirsiniz. Sahne klasörleri olarak adlandırılmış boş oyun nesnelerini kullanın.
+Proje hiyerarşisinin yanında sahne hiyerarşisi de var. Daha önce olduğu gibi, size bir şablon sunacağız. İhtiyaçlarınıza göre ayarlayabilirsiniz. 
+Sahne klasörleri olarak adlandırılmış boş oyun nesnelerini kullanın.
 
 <pre>
 Debug
@@ -363,7 +364,7 @@ Birden çok internal classa izin verilmesine rağmen, kaynak dosyalarda yalnızc
 
 Kaynak dosyalara, dosyadaki public classın adı verilmelidir.
 
-Açıkça tanımlanmış bir yapı ile ad alanlarını düzenleyin, 
+Açıkça tanımlanmış bir yapı ile Namespace/Ad alanlarını düzenleyin, 
 
 Class memberları should be alfabetik olmalı, ve bölümlere gruplandırılmalıdır:
 * Constant Fields
@@ -462,7 +463,7 @@ Bir sınıfın yalnızca az sayıda değişkeni varsa, Katlamalı Gruplar/Foldou
 
 If a class has a moderate amount of variables (5-10), all [Serializable](#serializable) variables should have a non-default Foldout Group assigned. A common category is `Config`.
 
-To create Foldout Groups there are 2 options in Unity. 
+Unity'de folder grupları yapmanın 2 yolu vardır.
 
 * The first is to define a `[Serializable] public Class` inside the main class however this can have a performance impact. This allows the use of the same variable name to be shared.
 * The second option is to use the Foldout Group Attribute available with [Odin Inspector](https://odininspector.com/).
@@ -540,7 +541,7 @@ All variable names must not be redundant with their context as all variable refe
 ###### Considered Context Examples:
 Consider a Class called `PlayerCharacter`.
 
-**Bad**
+**Kötü**
 
 * `PlayerScore`
 * `PlayerKills`
@@ -551,7 +552,7 @@ Consider a Class called `PlayerCharacter`.
 
 All of these variables are named redundantly. It is implied that the variable is representative of the `PlayerCharacter` it belongs to because it is `PlayerCharacter` that is defining these variables.
 
-**Good**
+**İyi**
 
 * `Score`
 * `Kills`
@@ -622,9 +623,8 @@ A Value Range only needs to be defined if the bounds of a value are known. While
 ##### Booleans
 
 ###### Boolean Prefix
-All booleans should be named in PascalCase but prefixed with a verb.
-
-Example: Use `isDead` and `hasItem`, **not** `Dead` and `Item`.
+Bütün Booleanlar PascalCase'te yazılmalı ve bir prefix kullanmalıdır.
+Örnek: `isDead` ve `hasItem` kullanın, `Dead` ve `Item` **kullanmayın**.
 
 ###### Boolean Names
 All booleans should be named as descriptive adjectives when possible if representing general information.
@@ -731,8 +731,8 @@ Kötü örnekler:
 * `Dead` - Öldü mü? Ölüleşecek mi?
 * `Visibility` - Visible mı? Visibility ayarı mı?
 
-#### Event Handlers and Dispatchers Should Start With `On`
-Any function that handles an event or dispatches an event should start with `On` and continue to follow [the verb rule](#function-verbrule).
+#### Event Handlers ve Dispatchers `On` İle Başlamalı
+Any function that Event handlelayıcı veya event dispatchleyen herhangibir function `On` ile başlamalı ve [fiil kurallarını](#function-verbrule) takip etmelidir.
 
 İyi örnekler:
 
