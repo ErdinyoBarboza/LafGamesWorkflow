@@ -465,8 +465,8 @@ If a class has a moderate amount of variables (5-10), all [Serializable](#serial
 
 Unity'de folder grupları yapmanın 2 yolu vardır.
 
-* The first is to define a `[Serializable] public Class` inside the main class however this can have a performance impact. This allows the use of the same variable name to be shared.
-* The second option is to use the Foldout Group Attribute available with [Odin Inspector](https://odininspector.com/).
+* Bunun ilk yolu Main classın içinde `[Serializable] public Class`  define etmektir ancak bu performansa etki eder. Bu aynı variable isminin paylaşılmasına izin verir.
+* İkinci yol ise [Odin Inspector](https://odininspector.com/) tarzı üçüncül parti program kullanmaktır.
 
 ```
 [[Serializable](https://docs.unity3d.com/ScriptReference/Serializable.html)]
@@ -664,7 +664,7 @@ Arrays follow the same naming rules as above, but should be named as a plural no
 Example: Use `Targets`, `Hats`, and `EnemyPlayers`, not `TargetList`, `HatArray`, `EnemyPlayerArray`.
 
 ##### Interfaces
-Interfaces are led with a capital `I` then followed with PascalCase.
+Interfaceler büyük harf `I` ile başlayıp sonrasında PascalCase ile devam eder.
 
 Example: ```public interface ICanEat { }```
 
@@ -675,21 +675,21 @@ This section describes how you should author functions, events, and event dispat
 #### Function Naming
 The naming of functions, events, and event dispatchers is critically important. Based on the name alone, certain assumptions can be made about functions. For example:
 
-* Is it a pure function?
-* Is it fetching state information?
-* Is it a handler?
-* What is its purpose?
+* Saf bir fonksiyon mu?
+* State Information alıyor mu?
+* Handler mı?
+* Amacı nedir?
 
 These questions and more can all be answered when functions are named appropriately.
 
 <a name="function-verbrule"></a>
-#### All Functions Should Be Verbs
+#### Bütün Functionlar Fiil Olmalıdır
 All functions and events perform some form of action, whether its getting info, calculating data, or causing something to explode. Therefore, all functions should start with verbs. They should be worded in the present tense whenever possible. They should also have some context as to what they are doing.
 
 İyi örnekler:
 
-* `Fire` - Good example if in a Character / Weapon class, as it has context. Bad if in a Barrel / Grass / any ambiguous class.
-* `Jump` - Good example if in a Character class, otherwise, needs context.
+* `Fire` - Character / Weapon classı ise iyi bir örnek çünkü, konuyla alakalı. Barrel / Grass / ve benzeri belirsiz classlar için kötü bir örnek.
+* `Jump` - Characater classı ise iyi bir örnek, ancak değil ise belirsiz.
 * `Explode`
 * `ReceiveMessage`
 * `SortPlayerArray`
@@ -707,10 +707,11 @@ Kötü örnekler:
 * `PlayerState` - İsimler belirsizdir.
 * `Color` - Bağlamsız bir fiil, veya belirsiz bir isim .
 
-#### Functions Returning Bool Should Ask Questions
-When writing a function that does not change the state of or modify any object and is purely for getting information, state, or computing a yes/no value, it should ask a question. This should also follow [the verb rule](#function-verbrule).
+#### Bool Fonksiyonları Soru Sormalı
+State değiştirmeyen, object modifiye etmeyen, sadece informasyon, state yada yes/no value'su hesaplayan fuunctionlar soru sormalıdır.
+Yine [fiil kuralı](#function-verbrule)nı kullanmalıdır.
 
-This is extremely important as if a question is not asked, it may be assumed that the function performs an action and is returning whether that action succeeded.
+Soru sormazsanız functionunuz başka tipler ile karıştırılır.
 
 İyi örnekler:
 
@@ -720,9 +721,9 @@ This is extremely important as if a question is not asked, it may be assumed tha
 * `IsSpeaking`
 * `IsHavingAnExistentialCrisis`
 * `IsVisible`
-* `HasWeapon` - ["Has" is a verb.](http://grammar.yourdictionary.com/parts-of-speech/verbs/Helping-Verbs.html)
-* `WasCharging` - ["Was" is past-tense of "be".](http://grammar.yourdictionary.com/parts-of-speech/verbs/Helping-Verbs.html) Use "was" when referring to 'previous frame' or 'previous state'.
-* `CanReload` - ["Can" is a verb.](http://grammar.yourdictionary.com/parts-of-speech/verbs/Helping-Verbs.html)
+* `HasWeapon` - ["Has" bir fiildir.](http://grammar.yourdictionary.com/parts-of-speech/verbs/Helping-Verbs.html)
+* `WasCharging` - ["Was", "be"nin geçmiş zamanlı çekimidir.](http://grammar.yourdictionary.com/parts-of-speech/verbs/Helping-Verbs.html) 'önceki frame' yada 'önceki state' ile ilgili durumlarda "was" kullanın.
+* `CanReload` - ["Can" bir fiildir.](http://grammar.yourdictionary.com/parts-of-speech/verbs/Helping-Verbs.html)
 
 Kötü örnekler:
 
@@ -732,7 +733,7 @@ Kötü örnekler:
 * `Visibility` - Visible mı? Visibility ayarı mı?
 
 #### Event Handlers ve Dispatchers `On` İle Başlamalı
-Any function that Event handlelayıcı veya event dispatchleyen herhangibir function `On` ile başlamalı ve [fiil kurallarını](#function-verbrule) takip etmelidir.
+Event handlelayıcı veya event dispatchleyen herhangibir function `On` ile başlamalı ve [fiil kurallarını](#function-verbrule) takip etmelidir.
 
 İyi örnekler:
 
