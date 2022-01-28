@@ -294,15 +294,15 @@ Bunu yapmamak aynı zamanda birisinin 'Materials' klasörüne statik bir mesh ve
 
 <a name="2.7"></a>
 <a name="structure-large-sets"></a>
-### 2.7 Very Large Asset Sets Get Their Own Folder Layout
+### 2.7 Aşırı Büyük Asset Setleri kendilerine ait Dosya Layoutuna sahip olur
 
-This can be seen as a pseudo-exception to [2.6](#2.6).
+Bu kural [2.6](#2.6)nın uygulanmadığı yerlerden biridir.
 
-There are certain asset types that have a huge volume of related files where each asset has a unique purpose. The two most common are Animation and Audio assets. If you find yourself having 15+ of these assets that belong together, they should be together.
+Her bir assetin benzersiz bir amacı olduğu, çok sayıda ilgili dosya içeren belirli asset türleri vardır. En yaygın ikisi Animasyon ve Ses assetleridir. Eğer bu varlıkların 15'ten fazlasına sahipseniz, birlikte olmaları gerekir.
 
-For example, animations that are shared across multiple characters should lay in `Characters/Common/Animations` and may have sub-folders such as `Locomotion` or `Cinematic`.
+Örneğin, birden çok karakter arasında paylaşılan animasyonlar "Karakterler/Ortak/Animasyonlar" içinde yer almalıdır ve "Lokomosyon" veya "Sinematik" gibi alt klasörleri olabilir.
 
-> This does not apply to assets like textures and materials. It is common for a `Rocks` folder to have a large amount of textures if there are a large amount of rocks, however these textures are generally only related to a few specific rocks and should be named appropriately. Even if these textures are part of a [Material Library](#2.8).
+> Bu, textürler ve malzemeler gibi varlıklar için geçerli değildir. Çok miktarda kaya varsa, bir 'Kayalar' klasörünün büyük miktarda dokuya sahip olması yaygındır, ancak bu dokular genellikle yalnızca birkaç belirli kaya ile ilgilidir ve uygun şekilde adlandırılmalıdır. Bu dokular bir [Malzeme Kitaplığının](#2.8) parçası olsa bile.
 
 <a name="2.8"></a>
 <a name="structure-material-library"></a>
