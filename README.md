@@ -321,7 +321,7 @@ Any testing or debug materials should be within `MaterialLibrary/Debug`. This al
 <a name="2.9"></a>
 <a name="scene-structure"></a>
 ## 2.9 Scene Structure
-Next to the project’s hierarchy, there’s also scene hierarchy. As before, we’ll present you a template. You can adjust it to your needs. Use named empty game objects as scene folders.
+Proje hiyerarşisinin yanında sahne hiyerarşisi de var. Daha önce olduğu gibi, size bir şablon sunacağız. İhtiyaçlarınıza göre ayarlayabilirsiniz. Sahne klasörleri olarak adlandırılmış boş oyun nesnelerini kullanın.
 
 <pre>
 Debug
@@ -338,18 +338,16 @@ Gameplay
 _Dynamic
 </pre>
 
- - All empty objects should be located at 0,0,0 with default rotation and scale.
- - For empty objects that are only containers for scripts, use “@” as prefix – e.g. @Cheats
- - When you’re instantiating an object in runtime, make sure to put it in _Dynamic – do not pollute the root of your hierarchy or you will find it difficult to navigate through it.
-
+- Tüm boş nesneler, varsayılan döndürme ve ölçekleme ile 0,0,0'da bulunmalıdır.
+- Yalnızca scriptleri sahneye getirme amaçlı olan boş nesneler için prefix olarak “@” kullanın – ör. @Cheats
+- Runtime'da bir nesneyi başlatırken, onu _Dynamic içine koyduğunuzdan emin olun - hiyerarşinizin kökünü kirletmeyin, aksi takdirde gezinmeyi zor bulursunuz.
 **[⬆ Back to Top](#table-of-contents)**
 
 <a name="scripts"></a>
 
 ## 3. Scripts
 
-This section will focus on C# classes and their internals. When possible, style rules conform to Microsoft's C# standard.
-
+Bu bölüm, C# sınıflarına ve içlerine odaklanacaktır. Mümkün olduğunda, Microsoft'un C# stil kuralları standardına uyunuz. 
 ### Sections
 > 3.1 [Class Organization](#classorganization)
 
